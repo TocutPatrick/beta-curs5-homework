@@ -15,14 +15,14 @@ public class Main {
         }
 
         System.out.println("----------------------------------------");
-        System.out.println("Sum is = " + NumberSum(numberArray));
+        System.out.println("Sum is = " + numberSum(numberArray));
         System.out.println("----------------------------------------");
-        System.out.println("Odd numbers = " + OddNumbers(numberArray));
+        System.out.println("Odd numbers = " + oddNumbers(numberArray));
         System.out.println("----------------------------------------");
 
         System.out.print("Enter a number: ");
         int compareNumber = key.nextInt();
-        int[] biggerNumbersArray = CompareNumbers(numberArray, compareNumber);
+        int[] biggerNumbersArray = compareNumbers(numberArray, compareNumber);
 
         for (int a : biggerNumbersArray) {
             System.out.println(a);
@@ -31,19 +31,19 @@ public class Main {
         System.out.println("----------------------------------------");
         System.out.print("Enter donations target: ");
         int donationTarget = key.nextInt();
-        ReachDonationTarget(donationTarget);
+        reachDonationTarget(donationTarget);
 
         System.out.println("----------------------------------------");
         System.out.print("Enter maximum amount of donations: ");
         int max = key.nextInt();
-        ReachDonationTarget2(donationTarget, max);
+        reachDonationTarget2(donationTarget, max);
 
         System.out.println("----------------------------------------");
         String phrase = "Welcome to the Random Phrase and Idiom Generator. There will be times when you may need more than a random word for what you want to accomplish, and this free online tool can help. The use of this tool is quite simple. All you need to do is indicate the number of random phrases you'd like to be displayed and then hit the \"Generate Random Phrases\" button. Once done, your chosen number of idioms will be displayed along with the meaning of the idiom.";
-        PhraseSplit(phrase);
+        phraseSplit(phrase);
     }
 
-    public static int NumberSum(int[] a) {
+    public static int numberSum(int[] a) {
         int suma = 0;
         for (int i : a) {
             suma += i;
@@ -51,7 +51,7 @@ public class Main {
         return suma;
     }
 
-    public static int OddNumbers(int[] a) {
+    public static int oddNumbers(int[] a) {
         int count = 0;
         for (int i : a) {
             if (i % 2 != 0)
@@ -60,7 +60,7 @@ public class Main {
         return count;
     }
 
-    private static int[] CompareNumbers(int[] numberArray, int compareNumber) {
+    private static int[] compareNumbers(int[] numberArray, int compareNumber) {
         int bigCount = 0;
         int x = 0;
         for (int i : numberArray) {
@@ -78,7 +78,7 @@ public class Main {
         return biggerNumber;
     }
 
-    private static void ReachDonationTarget(int donationTarget) {
+    private static void reachDonationTarget(int donationTarget) {
         Random random = new Random();
         int totDon = 0;
         int count = 0;
@@ -92,7 +92,7 @@ public class Main {
         System.out.println("Donation target reached succesfully with " + count + " donations!!!");
     }
 
-    private static void ReachDonationTarget2(int donationTarget, int max) {
+    private static void reachDonationTarget2(int donationTarget, int max) {
         Random random = new Random();
         int totDon = 0;
         int count = 0;
@@ -110,9 +110,9 @@ public class Main {
 
     }
 
-    public static void PhraseSplit(String phrase){
-        String[] splitter = new String[]{" "};
-        for (String s : splitter = phrase.split("\\. ")) {
+    public static void phraseSplit(String phrase){
+
+        for (String s :  phrase.split("\\. ")) {
             System.out.println(s + '.');
         }
 
